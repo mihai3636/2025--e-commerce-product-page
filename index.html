@@ -23,10 +23,131 @@
     <title>E-commerce product page</title>
   </head>
   <body>
+    <main class="container">
+      <nav class="nav-mobile" style="display: none">
+        <button><img src="./images/icon-close.svg" alt="" /></button>
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li>
+            <a href="#">Men</a>
+          </li>
+          <li>
+            <a href="#">Women</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <header>
+        <button class="btn btn--menu" type="button">
+          <img src="./images/icon-menu.svg" alt="" />
+        </button>
+        <img src="./images/logo.svg" alt="Logo sneakers" />
+        <nav class="nav-desktop" style="display: none">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li>
+              <a href="#">Men</a>
+            </li>
+            <li>
+              <a href="#">Women</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <button type="button">
+          <img src="./images/icon-cart.svg" alt="Cart" />
+        </button>
+        <button type="button">
+          <img src="./images/image-avatar.png" alt="Avatar" />
+        </button>
+      </header>
+
+      <div class="content">
+        <article class="preview">
+          <img src="./images/image-product-1.jpg" alt="Shoes top and bottom" />
+          <ul class="list-photo" style="display: none">
+            <li>
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Thumbnail product 1"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="Thumbnail product 2"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="Thumbnail product 3"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="Thumbnail product 4"
+              />
+            </li>
+          </ul>
+          <button class="btn btn--previous btn--previous-mobile">
+            <img src="./images/icon-previous.svg" alt="Icon previous" />
+          </button>
+          <button class="btn btn--next btn--next-mobile">
+            <img src="./images/icon-next.svg" alt="Icon next" />
+          </button>
+        </article>
+        <article class="description">
+          <span>Sneaker Company</span>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer
+          </p>
+          <div class="price">
+            <p><strong>$125.00</strong> <span>50%</span></p>
+            <strike>$250.00</strike>
+          </div>
+          <div class="checkout">
+            <div class="quantity">
+              <button class="btn btn--quantity">
+                <img src="./images/icon-minus.svg" alt="Icon minus" />
+              </button>
+              <span>0</span>
+              <button class="btn btn--quantity">
+                <img src="./images/icon-plus.svg" alt="Icon plus" />
+              </button>
+            </div>
+            <button class="btn btn--add-to-cart">
+              <img src="./images/icon-cart.svg" alt="Icon cart" />
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- 
+
     Collections Men Women About Contact Sneaker Company Fall Limited Edition
     Sneakers These low-profile sneakers are your perfect casual wear companion.
     Featuring a durable rubber outer sole, they’ll withstand everything the
     weather can offer. $125.00 50% $250.00 0 Add to cart
-  </body>
-</html>
+
+-->
 
