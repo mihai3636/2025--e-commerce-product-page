@@ -20,13 +20,18 @@
       href="./images/favicon-32x32.png"
     />
 
+    <script src="./js/main.js" type="module"></script>
+
     <title>E-commerce product page</title>
   </head>
   <body>
     <main class="container">
-      <nav class="nav-mobile" style="display: none">
-        <button><img src="./images/icon-close.svg" alt="" /></button>
-        <ul>
+      <div class="overlay"></div>
+      <nav class="nav-mobile flow-content gap-md">
+        <button id="btnMenuCloseMobile">
+          <img src="./images/icon-close.svg" alt="" />
+        </button>
+        <ul class="flow-content gap-sm">
           <li><a href="#">Collections</a></li>
           <li>
             <a href="#">Men</a>
@@ -44,7 +49,7 @@
       </nav>
 
       <header class="split a-center">
-        <button class="btn btn--menu" type="button">
+        <button id="btnMenuMobile" class="btn btn--menu" type="button">
           <img src="./images/icon-menu.svg" alt="" />
         </button>
         <img src="./images/logo.svg" alt="Logo sneakers" />

@@ -28,3 +28,19 @@ button {
   background: transparent;
   border: none;
 }
+
+.flow-content > * + * {
+  margin-block-start: var(--flow-space, 1rem);
+}
+
+.flow-content.gap-sm > * + * {
+  --flow-space: var(--sp-5);
+}
+
+.flow-content.gap-md > * + * {
+  --flow-space: var(--sp-7);
+}
+
+.flow-content.gap-lg > * + * {
+  --flow-space: var(--sp-7);
+}
