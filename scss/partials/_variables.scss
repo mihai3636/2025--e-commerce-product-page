@@ -7,10 +7,11 @@ $bp-desktop: #{toRem(600px)};
   --clr-primary-tint: hsl(25, 100%, 94%);
 
   --clr-white: #fff;
-  --clr-grey-1: hsl(223, 64%, 98%);
+  --clr-grey-1: rgb(247, 248, 253);
   --clr-grey-2: hsl(220, 14%, 75%);
   --clr-grey-3: hsl(219, 9%, 45%);
   --clr-grey-4: hsl(220, 13%, 13%);
+  --clr-grey-5: #000;
 
   --clr-overlay: rgb(0, 0, 0, 0.75);
 
@@ -49,6 +50,19 @@ $bp-desktop: #{toRem(600px)};
   --sp-10: #{toRem(80px)};
   --sp-11: #{toRem(96px)};
   --sp-12: #{toRem(128px)};
+
+  // Z indexes
+
+  --z-overlay: 100;
+  --z-nav: 200;
+
+  // Box shadow
+  --bs-primary: 0 0 10px rgba(255, 125, 26, 1);
+
+  // Border radius
+  --br-1: 5px;
+  --br-2: 10px;
+  --br-circle: 50%;
 
   --desktop-container-width: #{toRem(600px)};
 }
