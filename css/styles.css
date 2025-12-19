@@ -327,10 +327,10 @@ strike {
   border-radius: var(--br-2);
   box-shadow: var(--bs-primary);
 }
-.btn--add-to-cart img {
-  width: 18px;
-  height: 18px;
-  filter: invert(1) brightness(0);
+.btn--add-to-cart .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--clr-grey-5);
 }
 .btn--add-to-cart span {
   font-weight: var(--fw-bold);

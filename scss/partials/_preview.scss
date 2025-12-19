@@ -127,10 +127,10 @@ strike {
 
   box-shadow: var(--bs-primary);
 
-  img {
-    width: 18px;
-    height: 18px;
-    filter: invert(1) brightness(0);
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--clr-grey-5);
   }
 
   span {
