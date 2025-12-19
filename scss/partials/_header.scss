@@ -16,6 +16,28 @@ header button {
   }
 }
 
+header .btn--menu {
+  @media (min-width: $bp-desktop) {
+    display: none;
+  }
+}
+
+header .nav-desktop {
+  display: none;
+
+  @media (min-width: $bp-desktop) {
+    display: flex;
+  }
+}
+
+.nav-desktop {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: var(--sp-5);
+  }
+}
+
 header .profile {
   width: 2rem;
   height: 2rem;
@@ -51,19 +73,27 @@ header .profile {
     display: block;
     width: 100%;
   }
+
+  @media (min-width: $bp-desktop) {
+    display: none;
+  }
 }
 
 .open-menu .nav-mobile {
   transform: translateX(0);
 }
 
-.overlay {
+.overlay-nav-mobile {
   display: none;
   position: fixed;
   inset: 0;
   background-color: var(--clr-overlay);
 }
 
-.open-menu .overlay {
+.open-menu .overlay-nav-mobile {
   display: block;
+
+  @media (min-width: $bp-desktop) {
+    display: none;
+  }
 }
