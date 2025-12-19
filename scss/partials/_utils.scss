@@ -9,3 +9,22 @@
   $remSize: math.div($size, 16px);
   @return #{$remSize}rem;
 }
+
+.split {
+  display: flex;
+  gap: var(--sp-5);
+}
+
+.split .push-right {
+  margin-left: auto;
+}
+
+.a-center {
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}

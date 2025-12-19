@@ -1,3 +1,22 @@
+.split {
+  display: flex;
+  gap: var(--sp-5);
+}
+
+.split .push-right {
+  margin-left: auto;
+}
+
+.a-center {
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
 :root {
   --clr-primary: hsl(26, 100%, 55%);
   --clr-primary-tint: hsl(25, 100%, 94%);
@@ -67,6 +86,25 @@ body {
   font-weight: var(--fw-normal);
   line-height: 1.5;
   background-color: var(--clr-primary-tint);
+}
+
+header {
+  background-color: var(--clr-grey-1);
+  padding: var(--sp-6) var(--sp-6);
+}
+
+header button {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+header button img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+header .profile {
+  width: 2rem;
+  height: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
