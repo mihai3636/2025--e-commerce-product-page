@@ -1,0 +1,16 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.preview > .img {
+  height: 300px;
+  background-color: red;
+
+  background-image: url("../../images/image-product-1.jpg");
+  background-size: cover;
+}
+
+.preview > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
