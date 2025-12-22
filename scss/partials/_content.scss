@@ -1,0 +1,8 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.content {
+  @media (min-width: $bp-desktop) {
+    margin-block-start: var(--sp-8);
+  }
+}

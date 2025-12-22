@@ -1,0 +1,45 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.split {
+  display: flex;
+  gap: var(--sp-5);
+}
+
+.split .push-right {
+  margin-left: auto;
+}
+
+.split.gap-md {
+  gap: var(--sp-7);
+
+  @media (min-width: $bp-desktop) {
+    gap: var(--sp-9);
+  }
+}
+
+.a-center {
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.flow-content > * + * {
+  margin-block-start: var(--flow-space, 1rem);
+}
+
+.flow-content.gap-sm > * + * {
+  --flow-space: var(--sp-5);
+}
+
+.flow-content.gap-md > * + * {
+  --flow-space: var(--sp-7);
+}
+
+.flow-content.gap-lg > * + * {
+  --flow-space: var(--sp-7);
+}

@@ -2,7 +2,6 @@
 @use "variables" as *;
 
 header {
-  padding: var(--sp-6) var(--sp-6);
 }
 
 header button {
@@ -21,19 +20,42 @@ header .btn--menu {
   }
 }
 
-header .nav-desktop {
-  display: none;
+header {
+  padding: var(--sp-6) var(--sp-6);
+  border-block-end: 2px solid var(--clr-grey-1);
 
   @media (min-width: $bp-desktop) {
-    display: flex;
+    padding-block: 0;
   }
 }
 
 .nav-desktop {
+  display: none;
+
   ul {
     list-style: none;
     display: flex;
     gap: var(--sp-5);
+  }
+
+  a {
+    display: inline-block;
+    font: inherit;
+    text-decoration: none;
+    color: var(--clr-grey-3);
+
+    @media (min-width: $bp-desktop) {
+      padding: var(--sp-6) 0;
+    }
+
+    &:hover {
+      color: var(--clr-grey-5);
+      box-shadow: inset 0 -4px 0 0 var(--clr-primary);
+    }
+  }
+
+  @media (min-width: $bp-desktop) {
+    display: block;
   }
 }
 
