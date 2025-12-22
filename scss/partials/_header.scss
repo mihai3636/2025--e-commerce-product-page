@@ -62,6 +62,44 @@ header {
 header .profile {
   width: 2rem;
   height: 2rem;
+  border-radius: var(--br-circle);
+
+  &:hover {
+    outline: 2px solid var(--clr-primary);
+  }
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-badge {
+  display: none;
+  position: absolute;
+
+  padding: 0 var(--sp-3);
+  font-size: var(--fs-2);
+  border-radius: 10px;
+
+  top: -100%;
+  right: -100%;
+
+  transform: translateY(60%) translateX(-50%);
+
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.cart .icon {
+  width: 21px;
+  height: 21px;
+  color: var(--clr-grey-3);
+}
+
+.cart:hover {
+  .icon {
+    color: var(--clr-grey-5);
+  }
 }
 
 .nav-mobile {

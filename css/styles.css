@@ -88,7 +88,7 @@ body {
 .split.gap-md {
   gap: var(--sp-7);
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .split.gap-md {
     gap: var(--sp-9);
   }
@@ -129,7 +129,7 @@ header button img {
   aspect-ratio: 1;
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   header .btn--menu {
     display: none;
   }
@@ -139,7 +139,7 @@ header {
   padding: var(--sp-6) var(--sp-6);
   border-block-end: 2px solid var(--clr-grey-1);
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   header {
     padding-block: 0;
   }
@@ -159,7 +159,7 @@ header {
   text-decoration: none;
   color: var(--clr-grey-3);
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .nav-desktop a {
     padding: var(--sp-6) 0;
   }
@@ -168,7 +168,7 @@ header {
   color: var(--clr-grey-5);
   box-shadow: inset 0 -4px 0 0 var(--clr-primary);
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .nav-desktop {
     display: block;
   }
@@ -177,6 +177,37 @@ header {
 header .profile {
   width: 2rem;
   height: 2rem;
+  border-radius: var(--br-circle);
+}
+header .profile:hover {
+  outline: 2px solid var(--clr-primary);
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-badge {
+  display: none;
+  position: absolute;
+  padding: 0 var(--sp-3);
+  font-size: var(--fs-2);
+  border-radius: 10px;
+  top: -100%;
+  right: -100%;
+  transform: translateY(60%) translateX(-50%);
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.cart .icon {
+  width: 21px;
+  height: 21px;
+  color: var(--clr-grey-3);
+}
+
+.cart:hover .icon {
+  color: var(--clr-grey-5);
 }
 
 .nav-mobile {
@@ -205,7 +236,7 @@ header .profile {
   display: block;
   width: 100%;
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .nav-mobile {
     display: none;
   }
@@ -226,7 +257,7 @@ header .profile {
 .open-menu .overlay-nav-mobile {
   display: block;
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .open-menu .overlay-nav-mobile {
     display: none;
   }
@@ -295,7 +326,7 @@ header .profile {
   align-items: center;
   justify-content: space-between;
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .description > .price {
     flex-direction: column;
     align-items: start;
@@ -323,7 +354,7 @@ strike {
   flex-direction: column;
   gap: var(--sp-5);
 }
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .checkout {
     flex-direction: row;
   }
@@ -361,7 +392,7 @@ strike {
   font-weight: var(--fw-bold);
 }
 
-@media (min-width: 43.75rem) {
+@media (min-width: 50rem) {
   .content {
     margin-block-start: var(--sp-8);
   }
