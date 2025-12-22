@@ -20,8 +20,12 @@
   line-height: 1.1;
 }
 
-.description h1 {
+.description h1.h1 {
   --flow-space: var(--sp-3);
+
+  @media (min-width: $bp-desktop) {
+    font-size: var(--fs-9);
+  }
 }
 
 .description > p {

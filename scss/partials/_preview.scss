@@ -9,6 +9,11 @@
   height: 300px;
   width: 100%;
   object-fit: cover;
+
+  @media (min-width: $bp-desktop) {
+    height: auto;
+    border-radius: 20px;
+  }
 }
 
 .preview-img .btn {
@@ -24,6 +29,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (min-width: $bp-desktop) {
+    display: none;
+  }
 }
 
 .btn--previous-mobile {

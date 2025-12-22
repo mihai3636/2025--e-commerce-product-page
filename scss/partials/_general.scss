@@ -1,6 +1,11 @@
 @use "utils" as *;
 @use "variables" as *;
 
+.container {
+  max-width: toRem(1200px);
+  margin-inline: auto;
+}
+
 .split {
   display: flex;
   gap: var(--sp-5);
@@ -34,6 +39,10 @@ button {
 
 .flow-content.gap-sm > * + * {
   --flow-space: var(--sp-5);
+
+  @media (min-width: $bp-desktop) {
+    --flow-space: var(--sp-7);
+  }
 }
 
 .flow-content.gap-md > * + * {

@@ -76,6 +76,11 @@ body {
   background-color: var(--clr-white);
 }
 
+.container {
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
 .split {
   display: flex;
   gap: var(--sp-5);
@@ -110,6 +115,11 @@ button {
 
 .flow-content.gap-sm > * + * {
   --flow-space: var(--sp-5);
+}
+@media (min-width: 50rem) {
+  .flow-content.gap-sm > * + * {
+    --flow-space: var(--sp-7);
+  }
 }
 
 .flow-content.gap-md > * + * {
@@ -272,6 +282,12 @@ header .profile:hover {
   width: 100%;
   object-fit: cover;
 }
+@media (min-width: 50rem) {
+  .preview-img > img {
+    height: auto;
+    border-radius: 20px;
+  }
+}
 
 .preview-img .btn {
   display: flex;
@@ -284,6 +300,11 @@ header .profile:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+@media (min-width: 50rem) {
+  .preview-img .btn {
+    display: none;
+  }
 }
 
 .btn--previous-mobile {
@@ -313,8 +334,13 @@ header .profile:hover {
   line-height: 1.1;
 }
 
-.description h1 {
+.description h1.h1 {
   --flow-space: var(--sp-3);
+}
+@media (min-width: 50rem) {
+  .description h1.h1 {
+    font-size: var(--fs-9);
+  }
 }
 
 .description > p {
@@ -394,7 +420,12 @@ strike {
 
 @media (min-width: 50rem) {
   .content {
-    margin-block-start: var(--sp-8);
+    margin-block-start: var(--sp-10);
+    padding-inline: var(--sp-9);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--sp-10);
   }
 }
 

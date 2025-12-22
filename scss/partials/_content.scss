@@ -3,6 +3,12 @@
 
 .content {
   @media (min-width: $bp-desktop) {
-    margin-block-start: var(--sp-8);
+    margin-block-start: var(--sp-10);
+    padding-inline: var(--sp-9);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--sp-10);
   }
 }
