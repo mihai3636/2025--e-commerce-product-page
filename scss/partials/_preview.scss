@@ -42,3 +42,31 @@
 .preview-img .btn--next-mobile {
   right: 3%;
 }
+
+.list-photo {
+  display: none;
+  list-style: none;
+
+  @media (min-width: $bp-desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.list-photo li {
+  border-radius: 10px;
+  overflow: hidden;
+
+  &.selected {
+    outline: 2px solid var(--clr-primary);
+
+    img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.list-photo img {
+  width: 100px;
+  cursor: pointer;
+}
