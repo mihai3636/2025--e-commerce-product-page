@@ -74,7 +74,6 @@ strike {
 .quantity {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 2rem;
 
   padding: var(--sp-4) var(--sp-6);
@@ -86,6 +85,7 @@ strike {
 .quantity span {
   font-weight: var(--fw-bold);
   line-height: 1;
+  align-self: center;
 }
 
 .btn--quantity {
