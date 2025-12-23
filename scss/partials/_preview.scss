@@ -10,6 +10,10 @@
   width: 100%;
   object-fit: cover;
 
+  @media (min-width: $bp-tablet) {
+    height: calc(300px + 20vw);
+  }
+
   @media (min-width: $bp-desktop) {
     height: auto;
     border-radius: 20px;

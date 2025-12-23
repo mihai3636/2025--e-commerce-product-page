@@ -282,6 +282,11 @@ header .profile:hover {
   width: 100%;
   object-fit: cover;
 }
+@media (min-width: 31.25rem) {
+  .preview-img > img {
+    height: calc(300px + 20vw);
+  }
+}
 @media (min-width: 50rem) {
   .preview-img > img {
     height: auto;

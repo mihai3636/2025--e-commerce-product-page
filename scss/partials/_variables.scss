@@ -1,5 +1,7 @@
 @use "./utils" as *;
+
 $bp-desktop: #{toRem(800px)};
+$bp-tablet: #{toRem(500px)};
 
 :root {
   --clr-primary: hsl(26, 100%, 55%);
