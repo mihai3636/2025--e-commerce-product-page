@@ -328,6 +328,7 @@ header .profile:hover {
   .list-photo {
     display: flex;
     justify-content: space-between;
+    gap: var(--sp-5);
   }
 }
 
@@ -421,6 +422,7 @@ strike {
 .quantity {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2rem;
   padding: var(--sp-4) var(--sp-6);
   border-radius: var(--br-2);
@@ -429,9 +431,17 @@ strike {
 
 .quantity span {
   font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.btn--quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn--add-to-cart {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,15 +459,33 @@ strike {
 .btn--add-to-cart span {
   font-weight: var(--fw-bold);
 }
+@media (min-width: 50rem) {
+  .btn--add-to-cart {
+    padding: var(--sp-5) var(--sp-3);
+  }
+}
+@media (min-width: 75rem) {
+  .btn--add-to-cart {
+    padding: var(--sp-5) var(--sp-8);
+  }
+}
 
 @media (min-width: 50rem) {
   .content {
-    margin-block-start: var(--sp-10);
-    padding-inline: var(--sp-9);
+    margin-block-start: var(--sp-8);
+    padding-inline: var(--sp-7);
+    padding-block-end: var(--sp-6);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 2vw;
+  }
+}
+@media (min-width: 75rem) {
+  .content {
+    margin-block-start: var(--sp-10);
     gap: var(--sp-10);
+    padding-inline: var(--sp-9);
   }
 }
 

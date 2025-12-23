@@ -3,12 +3,20 @@
 
 .content {
   @media (min-width: $bp-desktop) {
-    margin-block-start: var(--sp-10);
-    padding-inline: var(--sp-9);
+    margin-block-start: var(--sp-8);
+    padding-inline: var(--sp-7);
+    padding-block-end: var(--sp-6);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 2vw;
+  }
+
+  @media (min-width: $bp-desktop-xl) {
+    margin-block-start: var(--sp-10);
+
     gap: var(--sp-10);
+    padding-inline: var(--sp-9);
   }
 }

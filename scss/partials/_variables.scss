@@ -1,5 +1,6 @@
 @use "./utils" as *;
 
+$bp-desktop-xl: #{toRem(1200px)};
 $bp-desktop: #{toRem(800px)};
 $bp-tablet: #{toRem(500px)};
 

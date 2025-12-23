@@ -54,6 +54,7 @@
   @media (min-width: $bp-desktop) {
     display: flex;
     justify-content: space-between;
+    gap: var(--sp-5);
   }
 }
 

@@ -74,6 +74,7 @@ strike {
 .quantity {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2rem;
 
   padding: var(--sp-4) var(--sp-6);
@@ -84,9 +85,18 @@ strike {
 
 .quantity span {
   font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.btn--quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn--add-to-cart {
+  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,5 +116,13 @@ strike {
 
   span {
     font-weight: var(--fw-bold);
+  }
+
+  @media (min-width: $bp-desktop) {
+    padding: var(--sp-5) var(--sp-3);
+  }
+
+  @media (min-width: $bp-desktop-xl) {
+    padding: var(--sp-5) var(--sp-8);
   }
 }
