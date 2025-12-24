@@ -94,28 +94,25 @@ strike {
   justify-content: center;
 }
 
-.btn--add-to-cart {
+.btn--primary {
   width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--sp-5);
-
   padding: var(--sp-5) var(--sp-8);
   background-color: var(--clr-primary);
   border-radius: var(--br-2);
 
   box-shadow: var(--bs-primary);
+  font-weight: var(--fw-bold);
+}
+
+.btn--add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-5);
 
   .icon {
     width: 20px;
     height: 20px;
-    color: var(--clr-grey-5);
-  }
-
-  span {
-    font-weight: var(--fw-bold);
   }
 
   @media (min-width: $bp-desktop) {
