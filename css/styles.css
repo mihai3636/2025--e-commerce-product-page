@@ -249,6 +249,14 @@ header .profile:hover {
 .cart-content button.btn--primary {
   height: auto;
 }
+@media (min-width: 50rem) {
+  .cart-content {
+    width: 25rem;
+    inset-inline: auto;
+    right: 3%;
+    transform: translateY(95%);
+  }
+}
 
 .cart-container {
   padding: var(--sp-6) var(--sp-6);

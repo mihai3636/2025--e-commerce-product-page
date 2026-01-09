@@ -130,6 +130,14 @@ header .profile {
   button.btn--primary {
     height: auto;
   }
+
+  @media (min-width: $bp-desktop) {
+    width: #{toRem(400px)};
+    inset-inline: auto;
+
+    right: 3%;
+    transform: translateY(95%);
+  }
 }
 
 .cart-container {
