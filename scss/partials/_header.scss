@@ -250,7 +250,7 @@ header .profile {
   transform: translateX(0);
 }
 
-.overlay-nav-mobile {
+.overlay-background {
   display: none;
   position: fixed;
   inset: 0;
@@ -258,7 +258,7 @@ header .profile {
   z-index: var(--z-overlay);
 }
 
-.open-menu .overlay-nav-mobile {
+.open-menu .overlay-background {
   display: block;
 
   @media (min-width: $bp-desktop) {

@@ -1,0 +1,68 @@
+@use "utils" as *;
+@use "variables" as *;
+
+.open-lightbox .overlay-background {
+  display: block;
+}
+
+.lightbox {
+  display: flex;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  justify-content: center;
+  padding-block-start: var(--sp-10);
+
+  z-index: var(--z-lightbox);
+  // background-color: rebeccapurple;
+}
+
+.lightbox-content {
+}
+
+.lightbox .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--clr-grey-2);
+}
+
+.lightbox-preview-img {
+  position: relative;
+}
+
+.lightbox-preview-img img {
+  max-width: #{toRem(600px)};
+  border-radius: var(--br-2);
+}
+
+.lightbox-preview-img .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: var(--br-circle);
+  background-color: var(--clr-grey-1);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-preview-img .btn--previous-mobile {
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.lightbox-preview-img .btn--next-mobile {
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+}
+
+.lightbox-content .list-photo {
+  justify-content: space-around;
+  padding-inline: var(--sp-8);
+}

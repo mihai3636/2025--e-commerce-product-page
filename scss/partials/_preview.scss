@@ -63,12 +63,18 @@
   overflow: hidden;
 
   &.selected {
+    position: relative;
     outline: 2px solid var(--clr-primary);
-
-    img {
-      opacity: 0.5;
-    }
   }
+}
+
+.list-photo li.selected::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.5;
+  background-color: var(--clr-grey-1);
 }
 
 .list-photo img {
