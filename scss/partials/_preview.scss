@@ -9,6 +9,7 @@
   height: 300px;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 
   @media (min-width: $bp-tablet) {
     height: calc(300px + 20vw);

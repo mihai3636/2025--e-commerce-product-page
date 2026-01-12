@@ -380,6 +380,7 @@ header .profile:hover {
   height: 300px;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 }
 @media (min-width: 31.25rem) {
   .preview-img > img {
