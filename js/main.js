@@ -11,6 +11,7 @@ const headerEl = document.querySelector("header");
 const btnPrevMobile = document.getElementById("btnPrevMobile");
 const btnNextMobile = document.getElementById("btnNextMobile");
 const previewImgEl = document.querySelector(".preview-img img");
+const listPhotoEl = document.querySelector(".preview > .list-photo");
 
 const images = [
   "../images/image-product-1.jpg",
@@ -27,9 +28,28 @@ function updatePreviewImgUi() {
   previewImgEl.src = images[currentImgIndex];
 }
 
+function updatePreviewImgList() {
+  listPhotoEl.querySelectorAll("li").forEach((li) => {
+    li.classList.remove("selected");
+
+    if (li.querySelector(`img[data-index="${currentImgIndex}"]`)) {
+      li.classList.add("selected");
+    }
+  });
+}
+
 function render() {
   updatePreviewImgUi();
+  updatePreviewImgList();
 }
+
+listPhotoEl.addEventListener("click", (ev) => {
+  const img = ev.target.closest("img");
+  if (!img) return;
+
+  currentImgIndex = img.dataset.index;
+  render();
+});
 
 btnPrevMobile.addEventListener("click", (ev) => {
   console.log("Prev clicked");
