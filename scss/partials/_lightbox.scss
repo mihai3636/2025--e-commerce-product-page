@@ -20,6 +20,10 @@
 }
 
 .lightbox-content {
+  & > button {
+    display: block;
+    margin-left: auto;
+  }
 }
 
 .lightbox .icon {
@@ -30,6 +34,10 @@
 
 .lightbox-preview-img {
   position: relative;
+}
+
+.flow-content.gap-sm > * + .lightbox-preview-img {
+  --flow-space: var(--sp-5);
 }
 
 .lightbox-preview-img img {
