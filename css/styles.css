@@ -599,8 +599,11 @@ strike {
   display: block;
 }
 
-.lightbox {
+.open-lightbox .lightbox {
   display: flex;
+}
+
+.lightbox {
   display: none;
   position: absolute;
   left: 0;

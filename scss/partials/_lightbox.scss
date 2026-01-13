@@ -5,8 +5,11 @@
   display: block;
 }
 
-.lightbox {
+.open-lightbox .lightbox {
   display: flex;
+}
+
+.lightbox {
   display: none;
 
   position: absolute;

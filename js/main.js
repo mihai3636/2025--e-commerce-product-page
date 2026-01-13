@@ -1,3 +1,10 @@
+// import "./lightbox.js";
+import {
+  render as renderLightBox,
+  initPreviewAndNextBtns,
+  initPhotoListEventListener,
+} from "./lightbox.js";
+
 console.log("hello world");
 
 const btnMenuMobileEl = document.getElementById("btnMenuMobile");
@@ -10,8 +17,10 @@ const headerEl = document.querySelector("header");
 
 const btnPrevMobile = document.getElementById("btnPrevMobile");
 const btnNextMobile = document.getElementById("btnNextMobile");
-const previewImgEl = document.querySelector(".preview-img img");
+const previewImgEl = document.querySelector(".content .preview-img img");
 const listPhotoEl = document.querySelector(".preview > .list-photo");
+
+const lightboxEl = document.querySelector(".lightbox");
 
 const images = [
   "../images/image-product-1.jpg",
@@ -21,6 +30,22 @@ const images = [
 ];
 
 let currentImgIndex = 0;
+
+initPreviewAndNextBtns(
+  () => {
+    decrementPhotoIndex();
+    render();
+  },
+  () => {
+    incrementPhotoIndex();
+    render();
+  }
+);
+
+initPhotoListEventListener((index) => {
+  currentImgIndex = index;
+  render();
+});
 
 render();
 
@@ -41,6 +66,10 @@ function updatePreviewImgList() {
 function render() {
   updatePreviewImgUi();
   updatePreviewImgList();
+  renderLightBox({
+    currentPhotoSrc: images[currentImgIndex],
+    currentPhotoIndex: currentImgIndex,
+  });
 }
 
 listPhotoEl.addEventListener("click", (ev) => {
@@ -52,19 +81,23 @@ listPhotoEl.addEventListener("click", (ev) => {
 });
 
 btnPrevMobile.addEventListener("click", (ev) => {
-  console.log("Prev clicked");
-  currentImgIndex = currentImgIndex - 1;
-  if (currentImgIndex < 0) currentImgIndex = images.length - 1;
-
+  decrementPhotoIndex();
   render();
 });
 
 btnNextMobile.addEventListener("click", (ev) => {
-  console.log("Next clicked");
-
-  currentImgIndex = (currentImgIndex + 1) % images.length;
+  incrementPhotoIndex();
   render();
 });
+
+function decrementPhotoIndex() {
+  currentImgIndex = currentImgIndex - 1;
+  if (currentImgIndex < 0) currentImgIndex = images.length - 1;
+}
+
+function incrementPhotoIndex() {
+  currentImgIndex = (currentImgIndex + 1) % images.length;
+}
 
 btnMenuMobileEl.addEventListener("click", (ev) => {
   mainEl.classList.toggle("open-menu");
