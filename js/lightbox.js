@@ -8,8 +8,10 @@ const btnNext = document.querySelector(".lightbox-preview-img .btn--next");
 const listPhotoEl = document.querySelector(".lightbox .list-photo");
 const closeBtn = document.querySelector(".lightbox-content > button");
 
-console.log(listPhotoEl);
+const isDesktopQuery = window.matchMedia("(min-width: 50rem)");
 
+//TODO make the lightbox disappear when the screen width is getting smaller and prevent it from appearing
+// when clicking on the preview img on phone
 export function render({ currentPhotoSrc, currentPhotoIndex }) {
   renderPreviewImgUi(currentPhotoSrc);
   renderPreviewImgList(currentPhotoIndex);
@@ -34,6 +36,7 @@ export function initPhotoListEventListener(onListItemClicked) {
 }
 
 previewImgEl.addEventListener("click", (ev) => {
+  if (!isDesktopQuery.matches) return;
   document.querySelector("main").classList.toggle("open-lightbox");
 });
 

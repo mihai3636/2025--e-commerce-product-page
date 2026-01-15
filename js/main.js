@@ -66,6 +66,10 @@ function updatePreviewImgList() {
 function render() {
   updatePreviewImgUi();
   updatePreviewImgList();
+
+  // Should this be concerned of rendering the lightbox?
+  // Well without calling from here you don't really know what state to pass to that lightbox
+  // maybe render it only if it's visible, idk
   renderLightBox({
     currentPhotoSrc: images[currentImgIndex],
     currentPhotoIndex: currentImgIndex,
