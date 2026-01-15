@@ -155,10 +155,19 @@ header .profile {
 
 .empty-cart {
   display: none;
-  padding-block: var(--sp-9);
+  padding-block: var(--sp-8);
   text-align: center;
   font-weight: var(--fw-bold);
   color: var(--clr-grey-3);
+  margin: 0;
+}
+
+.empty-cart--visible .empty-cart {
+  display: block;
+}
+
+.empty-cart--visible .btn--checkout {
+  display: none;
 }
 
 .cart-container ul {

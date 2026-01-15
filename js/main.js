@@ -4,6 +4,11 @@ import {
   initPhotoListEventListener as lightboxInitPhotoListEventListener,
 } from "./lightbox.js";
 
+import {
+  render as renderCart,
+  initOnDeleteClicked as initCartOnDeleteClicked,
+} from "./cart.js";
+
 console.log("hello world");
 
 const btnMenuMobileEl = document.getElementById("btnMenuMobile");
@@ -28,8 +33,10 @@ const lightboxEl = document.querySelector(".lightbox");
 const btnQuantitySubstract = document.getElementById("btnQuantitySubstract");
 const btnQuantityAdd = document.getElementById("btnQuantityAdd");
 const quantityTextEl = document.querySelector(".quantity > span");
+const btnAddToCart = document.querySelector(".btn--add-to-cart");
 
-let quantity = 0;
+let quantity = 1;
+let cartQuantity = 0;
 
 const images = [
   "../images/image-product-1.jpg",
@@ -38,9 +45,27 @@ const images = [
   "../images/image-product-4.jpg",
 ];
 
+const product = {
+  title: "Fall Limited Edition Sneakers",
+  thumbnail: "./images/image-product-1-thumbnail.jpg",
+  quantity: 1,
+  priceItem: 125,
+};
+
 let currentImgIndex = 0;
 
 render();
+
+btnAddToCart.addEventListener("click", (ev) => {
+  cartQuantity = quantity;
+  render();
+  showCart(ev);
+});
+
+initCartOnDeleteClicked(() => {
+  cartQuantity = 0;
+  render();
+});
 
 lightboxInitPreviewAndNextBtns(
   () => {
@@ -59,7 +84,7 @@ lightboxInitPhotoListEventListener((index) => {
 });
 
 btnQuantitySubstract.addEventListener("click", (ev) => {
-  if (quantity <= 0) return;
+  if (quantity <= 1) return;
   quantity -= 1;
   render();
 });
@@ -109,6 +134,11 @@ document.addEventListener("click", () => {
   headerEl.classList.remove("cart-visible");
 });
 
+function showCart(clickEvent) {
+  clickEvent.stopPropagation();
+  headerEl.classList.add("cart-visible");
+}
+
 function decrementPhotoIndex() {
   currentImgIndex = currentImgIndex - 1;
   if (currentImgIndex < 0) currentImgIndex = images.length - 1;
@@ -140,13 +170,15 @@ function render() {
   updatePreviewImgUi();
   updatePreviewImgList();
 
-  // Should this be concerned of rendering the lightbox?
-  // Well without calling from here you don't really know what state to pass to that lightbox
-  // maybe render it only if it's visible, idk
   renderLightBox({
     currentPhotoSrc: images[currentImgIndex],
     currentPhotoIndex: currentImgIndex,
   });
 
   updateQuantityUi();
+  if (cartQuantity == 0) {
+    renderCart([]);
+  } else {
+    renderCart([{ ...product, quantity: cartQuantity }]);
+  }
 }
