@@ -1,3 +1,5 @@
+import "./phoneNav.js";
+
 import {
   render as renderLightBox,
   initPreviewAndNextBtns as lightboxInitPreviewAndNextBtns,
@@ -8,10 +10,6 @@ import {
   render as renderCart,
   initOnDeleteClicked as initCartOnDeleteClicked,
 } from "./cart.js";
-
-const btnMenuMobileEl = document.getElementById("btnMenuMobile");
-const btnMenuCloseMobileEl = document.getElementById("btnMenuCloseMobile");
-const mainEl = document.querySelector("main");
 
 // Photo Preview
 const btnPrevMobile = document.getElementById("btnPrevMobile");
@@ -104,14 +102,6 @@ btnPrevMobile.addEventListener("click", (ev) => {
 btnNextMobile.addEventListener("click", (ev) => {
   incrementPhotoIndex();
   render();
-});
-
-btnMenuMobileEl.addEventListener("click", (ev) => {
-  mainEl.classList.toggle("open-menu");
-});
-
-btnMenuCloseMobileEl.addEventListener("click", (ev) => {
-  mainEl.classList.toggle("open-menu");
 });
 
 function showCart(clickEvent) {
