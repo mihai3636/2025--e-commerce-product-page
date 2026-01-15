@@ -595,12 +595,16 @@ strike {
   }
 }
 
-.open-lightbox .overlay-background {
-  display: block;
+@media (min-width: 50rem) {
+  .open-lightbox .overlay-background {
+    display: block;
+  }
 }
 
-.open-lightbox .lightbox {
-  display: flex;
+@media (min-width: 50rem) {
+  .open-lightbox .lightbox {
+    display: flex;
+  }
 }
 
 .lightbox {

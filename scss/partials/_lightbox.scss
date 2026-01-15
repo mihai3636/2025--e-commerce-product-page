@@ -2,11 +2,15 @@
 @use "variables" as *;
 
 .open-lightbox .overlay-background {
-  display: block;
+  @media (min-width: $bp-desktop) {
+    display: block;
+  }
 }
 
 .open-lightbox .lightbox {
-  display: flex;
+  @media (min-width: $bp-desktop) {
+    display: flex;
+  }
 }
 
 .lightbox {
@@ -20,7 +24,6 @@
   padding-block-start: var(--sp-10);
 
   z-index: var(--z-lightbox);
-  // background-color: rebeccapurple;
 }
 
 .lightbox-content {
