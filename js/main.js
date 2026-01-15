@@ -9,16 +9,9 @@ import {
   initOnDeleteClicked as initCartOnDeleteClicked,
 } from "./cart.js";
 
-console.log("hello world");
-
 const btnMenuMobileEl = document.getElementById("btnMenuMobile");
 const btnMenuCloseMobileEl = document.getElementById("btnMenuCloseMobile");
 const mainEl = document.querySelector("main");
-
-// Cart
-const btnCart = document.querySelector(".cart");
-const cartContentEl = document.querySelector(".cart-content");
-const headerEl = document.querySelector("header");
 
 // Photo Preview
 const btnPrevMobile = document.getElementById("btnPrevMobile");
@@ -119,19 +112,6 @@ btnMenuMobileEl.addEventListener("click", (ev) => {
 
 btnMenuCloseMobileEl.addEventListener("click", (ev) => {
   mainEl.classList.toggle("open-menu");
-});
-
-btnCart.addEventListener("click", (ev) => {
-  ev.stopPropagation();
-  headerEl.classList.toggle("cart-visible");
-});
-
-cartContentEl.addEventListener("click", (ev) => {
-  ev.stopPropagation();
-});
-
-document.addEventListener("click", () => {
-  headerEl.classList.remove("cart-visible");
 });
 
 function showCart(clickEvent) {

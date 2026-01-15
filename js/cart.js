@@ -1,11 +1,22 @@
-const thumbnailEl = document.querySelector(".cart-item > img");
-const titleEl = document.querySelector(".cart-item > h2");
-const pricePerItemEl = document.getElementById("cartPricePerItem");
-const periceTotalEl = document.getElementById("cartPriceTotal");
-
 const sectionCartListEl = document.getElementById("sectionCartList");
+const btnCart = document.querySelector(".cart");
+const cartContentEl = document.querySelector(".cart-content");
+const headerEl = document.querySelector("header");
 
 let onDeleteClicked = () => {};
+
+btnCart.addEventListener("click", (ev) => {
+  ev.stopPropagation();
+  headerEl.classList.toggle("cart-visible");
+});
+
+cartContentEl.addEventListener("click", (ev) => {
+  ev.stopPropagation();
+});
+
+document.addEventListener("click", () => {
+  headerEl.classList.remove("cart-visible");
+});
 
 export function initOnDeleteClicked(onClick) {
   onDeleteClicked = onClick;
