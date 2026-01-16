@@ -18,6 +18,11 @@ document.addEventListener("click", () => {
   headerEl.classList.remove("cart-visible");
 });
 
+export function showCart(clickEvent) {
+  clickEvent.stopPropagation();
+  headerEl.classList.add("cart-visible");
+}
+
 export function initOnDeleteClicked(onClick) {
   onDeleteClicked = onClick;
 }

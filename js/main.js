@@ -9,6 +9,7 @@ import {
 import {
   render as renderCart,
   initOnDeleteClicked as initCartOnDeleteClicked,
+  showCart,
 } from "./cart.js";
 
 import {
@@ -18,24 +19,12 @@ import {
   render as renderPreviewImg,
 } from "./preview.js";
 
-// Lightbox
-const lightboxEl = document.querySelector(".lightbox");
-
-// Cart
-const btnQuantitySubstract = document.getElementById("btnQuantitySubstract");
-const btnQuantityAdd = document.getElementById("btnQuantityAdd");
-const quantityTextEl = document.querySelector(".quantity > span");
-const btnAddToCart = document.querySelector(".btn--add-to-cart");
-
-let quantity = 1;
-let cartQuantity = 0;
-
-const images = [
-  "../images/image-product-1.jpg",
-  "../images/image-product-2.jpg",
-  "../images/image-product-3.jpg",
-  "../images/image-product-4.jpg",
-];
+import {
+  initBtnQuantitySubstract,
+  initBtnQuantityAdd,
+  initAddToCart,
+  render as renderAddToCartQuantity,
+} from "./addToCart.js";
 
 const product = {
   title: "Fall Limited Edition Sneakers",
@@ -44,15 +33,18 @@ const product = {
   priceItem: 125,
 };
 
+let quantity = 1;
+let cartQuantity = 0;
 let currentImgIndex = 0;
 
-render();
+const images = [
+  "../images/image-product-1.jpg",
+  "../images/image-product-2.jpg",
+  "../images/image-product-3.jpg",
+  "../images/image-product-4.jpg",
+];
 
-btnAddToCart.addEventListener("click", (ev) => {
-  cartQuantity = quantity;
-  render();
-  showCart(ev);
-});
+render();
 
 initBtnNextMobileListener(() => {
   incrementPhotoIndex();
@@ -90,22 +82,23 @@ lightboxInitPhotoListEventListener((index) => {
   render();
 });
 
-btnQuantitySubstract.addEventListener("click", (ev) => {
+initBtnQuantitySubstract(() => {
   if (quantity <= 1) return;
   quantity -= 1;
   render();
 });
 
-btnQuantityAdd.addEventListener("click", (ev) => {
+initBtnQuantityAdd(() => {
   if (quantity >= 5) return;
   quantity += 1;
   render();
 });
 
-function showCart(clickEvent) {
-  clickEvent.stopPropagation();
-  headerEl.classList.add("cart-visible");
-}
+initAddToCart((ev) => {
+  cartQuantity = quantity;
+  showCart(ev);
+  render();
+});
 
 function decrementPhotoIndex() {
   currentImgIndex = currentImgIndex - 1;
@@ -131,7 +124,7 @@ function render() {
     currentPhotoIndex: currentImgIndex,
   });
 
-  updateQuantityUi();
+  renderAddToCartQuantity(quantity);
   if (cartQuantity == 0) {
     renderCart([]);
   } else {
