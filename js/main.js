@@ -11,11 +11,12 @@ import {
   initOnDeleteClicked as initCartOnDeleteClicked,
 } from "./cart.js";
 
-// Photo Preview
-const btnPrevMobile = document.getElementById("btnPrevMobile");
-const btnNextMobile = document.getElementById("btnNextMobile");
-const previewImgEl = document.querySelector(".content .preview-img img");
-const listPhotoEl = document.querySelector(".preview > .list-photo");
+import {
+  initBtnPrevMobileListener,
+  initBtnNextMobileListener,
+  initListPhotoEventListener,
+  render as renderPreviewImg,
+} from "./preview.js";
 
 // Lightbox
 const lightboxEl = document.querySelector(".lightbox");
@@ -53,6 +54,21 @@ btnAddToCart.addEventListener("click", (ev) => {
   showCart(ev);
 });
 
+initBtnNextMobileListener(() => {
+  incrementPhotoIndex();
+  render();
+});
+
+initBtnPrevMobileListener(() => {
+  decrementPhotoIndex();
+  render();
+});
+
+initListPhotoEventListener((index) => {
+  currentImgIndex = index;
+  render();
+});
+
 initCartOnDeleteClicked(() => {
   cartQuantity = 0;
   render();
@@ -86,24 +102,6 @@ btnQuantityAdd.addEventListener("click", (ev) => {
   render();
 });
 
-listPhotoEl.addEventListener("click", (ev) => {
-  const img = ev.target.closest("img");
-  if (!img) return;
-
-  currentImgIndex = img.dataset.index;
-  render();
-});
-
-btnPrevMobile.addEventListener("click", (ev) => {
-  decrementPhotoIndex();
-  render();
-});
-
-btnNextMobile.addEventListener("click", (ev) => {
-  incrementPhotoIndex();
-  render();
-});
-
 function showCart(clickEvent) {
   clickEvent.stopPropagation();
   headerEl.classList.add("cart-visible");
@@ -122,23 +120,11 @@ function updateQuantityUi() {
   quantityTextEl.textContent = quantity;
 }
 
-function updatePreviewImgUi() {
-  previewImgEl.src = images[currentImgIndex];
-}
-
-function updatePreviewImgList() {
-  listPhotoEl.querySelectorAll("li").forEach((li) => {
-    li.classList.remove("selected");
-
-    if (li.querySelector(`img[data-index="${currentImgIndex}"]`)) {
-      li.classList.add("selected");
-    }
-  });
-}
-
 function render() {
-  updatePreviewImgUi();
-  updatePreviewImgList();
+  renderPreviewImg({
+    imgSrc: images[currentImgIndex],
+    currentImgIndex: currentImgIndex,
+  });
 
   renderLightBox({
     currentPhotoSrc: images[currentImgIndex],

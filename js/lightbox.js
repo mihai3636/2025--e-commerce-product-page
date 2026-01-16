@@ -10,8 +10,6 @@ const closeBtn = document.querySelector(".lightbox-content > button");
 
 const isDesktopQuery = window.matchMedia("(min-width: 50rem)");
 
-//TODO make the lightbox disappear when the screen width is getting smaller and prevent it from appearing
-// when clicking on the preview img on phone
 export function render({ currentPhotoSrc, currentPhotoIndex }) {
   renderPreviewImgUi(currentPhotoSrc);
   renderPreviewImgList(currentPhotoIndex);
