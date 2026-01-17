@@ -109,10 +109,6 @@ function incrementPhotoIndex() {
   currentImgIndex = (currentImgIndex + 1) % images.length;
 }
 
-function updateQuantityUi() {
-  quantityTextEl.textContent = quantity;
-}
-
 function render() {
   renderPreviewImg({
     imgSrc: images[currentImgIndex],
