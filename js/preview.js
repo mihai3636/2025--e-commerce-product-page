@@ -3,8 +3,6 @@ const btnNextMobile = document.getElementById("btnNextMobile");
 const previewImgEl = document.querySelector(".content .preview-img img");
 const listPhotoEl = document.querySelector(".preview > .list-photo");
 
-let handlePhotoListImgClick = () => {};
-
 export function initListPhotoEventListener(onClick) {
   listPhotoEl.addEventListener("click", (ev) => {
     const img = ev.target.closest("img");
